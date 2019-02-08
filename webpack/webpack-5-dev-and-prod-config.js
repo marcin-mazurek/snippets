@@ -6,7 +6,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
-const isProduction = process.env.PRODUCTION === 'true';
+const isProduction = process.argv.indexOf('--production') !== -1;
 
 const commonPlugins = [
   // cleans up the dist/ folder before build to remove outdated files
